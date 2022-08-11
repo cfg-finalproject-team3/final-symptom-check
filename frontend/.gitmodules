@@ -1,0 +1,3 @@
+[submodule "finalapp"]
+	path = finalapp
+	url = https://github.com/cfg-finalproject-team3/finalapp
