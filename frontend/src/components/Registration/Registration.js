@@ -35,19 +35,10 @@ function Registration() {
       withCredentials: true,
       url: "http://localhost:4000/register",
     }).then((res) => {
-      if (res.status === 200) {
-        window.location.href = "/account";
+      if (res.data === "User Created") {
+        window.location.href = "/login";
       }
     });
-  };
-
-  const getUser = () => {
-    Axios({
-      method: "GET",
-
-      withCredentials: true,
-      url: "http://localhost:4000/account",
-    }).then((res) => console.log(res));
   };
 
   return (
@@ -148,9 +139,6 @@ function Registration() {
                 >
                   Register
                 </Button>
-                <div>
-                  <button onClick={getUser}>Go to profile</button>
-                </div>
               </form>
             </section>
           </Paper>

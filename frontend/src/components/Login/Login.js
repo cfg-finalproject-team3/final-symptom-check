@@ -31,19 +31,10 @@ function Login() {
       withCredentials: true,
       url: "http://localhost:4000/login",
     }).then((res) => {
-      if (res.status === 200) {
+      if (res.data === "Successfully Authenticated") {
         window.location.href = "/account";
       }
     });
-  };
-
-  const getUser = () => {
-    Axios({
-      method: "GET",
-
-      withCredentials: true,
-      url: "http://localhost:4000/account",
-    }).then((res) => console.log(res));
   };
 
   return (
@@ -118,10 +109,6 @@ function Login() {
                 >
                   Login
                 </Button>
-
-                <div>
-                  <button onClick={getUser}>Go to profile</button>
-                </div>
               </form>
             </section>
           </Paper>

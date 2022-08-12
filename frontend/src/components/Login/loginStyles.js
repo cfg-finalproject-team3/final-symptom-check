@@ -6,7 +6,6 @@ const paperStyle = makeStyles((theme) => ({
     height: "auto",
     width: 526,
     margin: "20px auto",
-    // backgroundColor: "#f5f5f5",
     backgroundColor: "#f5f5f5 !important",
 
     borderRadius: "5% !important",
@@ -23,11 +22,6 @@ const paperStyle = makeStyles((theme) => ({
   typography: {
     fontFamily: "Montserrat",
   },
-  // textField: {
-  //   fontFamily: "Montserrat",
-  //   paddingLeft: "50px",
-  //   paddingRight: "50px",
-  // },
 }));
 
 export default paperStyle;
