@@ -1,89 +1,57 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import './Test.css'
 
 function Test() {
-    const [testName, setTestName] = useState();
-    const [testVal, setTestVal] = useState();
-    const [testList, setTestList] = useState([]);
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/get").then((response) => {
-            console.log(response.data);
-            setTestList(response.data);
-            
-        });
-    }, []);
+  const [ testRes, setTestRes ] = useState("");
+  const [ testVal, setTestVal ] = useState("");
 
-    const submitTest = () => {
-        axios
-            .post("http://localhost:3001/insert", {
-                testName: testName,
-                testVal: testVal,
-            })
-            .then(
-                 (res) => console.log(res)
-                // setTestList([
-                //     ...testList,
-                //     { testName: setTestName, testVal: setTestVal },
-                // ])
-            );
-    };
+  const [ testList, setTestList ] = useState([]);
 
-    const deleteTest = (ID) => {
-        axios.delete(`http://localhost:3001/delete/${ID}`);
-    };
 
-    return (
-        <div>
-            <h1>Test</h1>
-            <div>
-                <label>Enter Test Results:</label>
-                <input
-                    type="text"
-                    name="testName"
-                    value={testName || ""}
-                    onChange={(e) => setTestName(e.target.value)}
-                />
-                <label>Enter Values:</label>
-                <input
-                    type="text"
-                    name="testVal"
-                    value={testVal || ""}
-                    onChange={(e) => setTestVal(e.target.value)}
-                />
-                <button onClick={submitTest}>Add Test</button>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Test Results</th>
-                            <th>Test Values</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+  useEffect(() => {
+    Axios.get('http://localhost:3001/read').then((response) => {
+       setTestList(response.data);
+    });
+  }, []);
 
-                    <tbody>
-                        {testList.map((val) => {
-                            return (
-                                <tr key={val.id}>
-                                    <td>{val.testName}</td>
-                                    <td>{val.testVal}</td>
-                                    <td>
-                                        <button
-                                            onClick={() => {
-                                                deleteTest(val.id);
-                                            }}
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            </div>
+  const addToList = () => {
+    Axios.post("http://localhost:3001/insert", {
+      testRes: testRes,
+      testVal, setTestVal,
+
+    });
+  };
+
+  return (
+    <div className="test-container">
+     <span className="test-title">Tests</span>
+
+     <div className="testbox">
+     <label className="test-title1">Test Name:</label>
+     <input type="text" onChange={(event) => {
+      setTestRes(event.target.value);
+    }}/>
+     <label className="test-title2">Test value:</label>
+     <input type="text" onChange={(event) => {
+      setTestVal(event.target.value);
+    }}/>
+    </div>
+
+     <button className="addlistbtn" onClick={addToList}>Add to List</button>
+
+     <h1 classname="test-title3">Test List</h1>
+
+     {testList.map((val, key) => {
+        return (
+        <div key={key}>  <h1>{val.testres}</h1>  <h1>{val.testvalue}</h1> 
         </div>
-    );
+        );
+     })}
+    </div>
+  );
 }
 
 export default Test;
+

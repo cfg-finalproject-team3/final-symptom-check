@@ -5,6 +5,7 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 
 import paperStyle from "./loginStyles";
+import Box from "@mui/material/Box";
 
 import {
   Paper,
@@ -47,6 +48,26 @@ function Login() {
 
   return (
     <>
+
+<Box
+        sx={{
+          minHeight: "100%",
+          backgroundPosition: "top left",
+          backgroundImage:
+            "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
+        }}
+      >
+        <Grid
+          container
+          justifyContent="center"
+          style={{
+            paddingTop: 200,
+            paddingBottom: 200,
+          }}
+        >
+          <Grid item xs={10} md={5}>
+
+    
       <section className={classes.container}>
         <Grid>
           <Paper elevation={10} className={classes.paper}>
@@ -127,7 +148,10 @@ function Login() {
             </section>
           </Paper>
         </Grid>
-      </section>
+      </section> 
+      </Grid>
+      </Grid>
+      </Box>
     </>
   );
 }

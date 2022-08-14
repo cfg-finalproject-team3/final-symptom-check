@@ -1,38 +1,195 @@
-/* .App {
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  /* background-image: url('/public/img/background-2.png'); */
+  max-width: 100%;
+  height: auto;
+}
+
+.headers {
   text-align: center;
+  padding-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.testinput {
+  background: #efefef;
+  border:0px solid #ffff; 
+  border-radius: 1em !important;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: 4em;
+  width: 50em;
+  margin-left: 20em;
+  margin-top: 5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.addbtn {
+
+  background-color: #2368AD;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.addbtn {
+  transition-duration: 0.4s;
+}
+
+.addbtn:hover {
+  background-color: #4CAF50; /* Green */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.personalinfo {
+  text-align: start;
+  background-color: #2368AD;
+  border:0px solid #ffff; 
+  border-bottom: 0px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 4em;
+  width: 50em;
+  margin-left: 20em;
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.genderbox {
+      text-align: start;
+      background-color: #FFFF;
+      border:0px solid #ffff; 
+      
+      box-sizing: border-box;
+      color: #000;
+      font-size: 1em;
+      line-height: normal;
+      outline: none;
+      position: relative;
+      height: 6em;
+      width: 50em;
+      margin-left: 20em;
+      padding-left: 3em;
+      padding-top: 1em;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+}
+
+.gendertitle {
+  padding-left: 0.5em;
+  padding-right: 0.5em; 
+}
+
+.gendertitle[type="radio"]{
+  margin: 0 10px 0 10px;
+}
+
+
+.agetitle {
+  padding-left: 14em;
+
+}
+
+.age {
+  background: #efefef;
+  border:1px solid rgb(128, 128, 128); 
+  border-radius: 1em !important;
+  box-sizing: border;
+}
+
+
+.btncontainer {
+  text-align: center;
+  padding-top: 3em;
+}
+
+
+.diagnosebtn {
+  padding-left: 10em;
+  background-color: #2368AD;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+.diagnosebtn {
+  transition-duration: 0.4s;
+}
+
+.diagnosebtn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+.symptom-container{
+
+  text-align: center;
+  border:0px solid #ffff; 
+  color: #ffff;
+  outline: none;
+  position: relative;
+  height: 4em;
+  width: 50em;
+      margin-left: 19em;
+      padding-left: 3em;
+      padding-top: 1em;
+}
+
+
+.diagnoseresults-container {
+  color: #FFFF;
+  background-color: #2368AD;
+  border:0px solid #ffff; 
+  border-bottom: 0px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 15em;
+  width: 50em;
+  margin-left: 20em;
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
+
+.diagnosisresults {
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 15em;
+  width: 50em;
+  margin-left: 20em;
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
+
