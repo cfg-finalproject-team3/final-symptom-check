@@ -33,7 +33,7 @@ function Login() {
       url: "http://localhost:4000/login",
     }).then((res) => {
       setMsg(res.data);
-      if (res.data === "Successfully Authenticated") {
+      if (res.data === "Login Successful") {
         window.location.href = "/account";
       }
     });
