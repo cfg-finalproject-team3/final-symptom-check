@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import Axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import paperStyle from "./loginStyles";
 
@@ -20,6 +20,7 @@ function Login() {
 
   const [emailLogin, setEmailLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
+  const [msg, setMsg] = useState(null);
 
   const login = () => {
     Axios({
@@ -31,11 +32,18 @@ function Login() {
       withCredentials: true,
       url: "http://localhost:4000/login",
     }).then((res) => {
+      setMsg(res.data);
       if (res.data === "Successfully Authenticated") {
         window.location.href = "/account";
       }
     });
   };
+
+  useEffect(() => {
+    login();
+  }, []);
+
+  if (!msg) return null;
 
   return (
     <>
@@ -109,6 +117,12 @@ function Login() {
                 >
                   Login
                 </Button>
+
+                <Grid align="center">
+                  <section>
+                    <p>{msg}</p>
+                  </section>
+                </Grid>
               </form>
             </section>
           </Paper>

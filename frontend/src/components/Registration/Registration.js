@@ -2,7 +2,7 @@ import React from "react";
 import "./Registration.css";
 import Axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Paper,
@@ -22,6 +22,7 @@ function Registration() {
   const [lastNameReg, setLastNameReg] = useState("");
   const [emailReg, setEmailReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
+  const [msg, setMsg] = useState(null);
 
   const register = () => {
     Axios({
@@ -35,11 +36,18 @@ function Registration() {
       withCredentials: true,
       url: "http://localhost:4000/register",
     }).then((res) => {
+      setMsg(res.data);
       if (res.data === "User Created") {
         window.location.href = "/login";
       }
     });
   };
+
+  useEffect(() => {
+    register();
+  }, []);
+
+  if (!msg) return null;
 
   return (
     <>
@@ -139,6 +147,11 @@ function Registration() {
                 >
                   Register
                 </Button>
+                <Grid align="center">
+                  <section>
+                    <p>{msg}</p>
+                  </section>
+                </Grid>
               </form>
             </section>
           </Paper>

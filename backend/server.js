@@ -64,7 +64,7 @@ app.post("/login", (req, res, next) => {
 app.post("/register", (req, res) => {
   User.findOne({ email: req.body.email }, async (err, doc) => {
     if (err) throw err;
-    if (doc) res.send("User Already Exists");
+    if (doc) res.send("Check Your Details/ Account Exists");
     if (!doc) {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       const newUser = new User({
