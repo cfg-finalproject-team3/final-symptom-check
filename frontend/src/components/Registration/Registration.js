@@ -37,7 +37,7 @@ function Registration() {
       url: "http://localhost:4000/register",
     }).then((res) => {
       setMsg(res.data);
-      if (res.data === "User Created") {
+      if (res.data === "Registration Successful") {
         window.location.href = "/login";
       }
     });

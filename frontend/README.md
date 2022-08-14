@@ -2,15 +2,33 @@
 
 ### Getting Started with React App Symptom Checker
 
-Name of the React App: check-symptoms-app
+Name of the React App: final-symptom-check
 
 Clone Git repo on your local machine
 
-Use command `cd check-symptoms-app`
+Use command `cd final-symptom-check`
+
+`git pull` to get the latest version
+
+### Running the Back End 
+
+Use command `cd backend`
 
 run `npm install` to install all packages
 
-`git pull` to get the latest version
+run `npm install nodemon` to install nodemon
+
+run `nodemon server.js` or  `npm start` to run the first back end server
+
+run `nodemon index.js` or  `node index.js` to run the second back end server
+
+### Running the Front End 
+
+Use command `cd frontend`
+
+run `npm install` to install all packages
+
+run `npm start` to run the application
 
 ## Font-family: Montserrat
 
