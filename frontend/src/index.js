@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
@@ -13,29 +15,8 @@ import reportWebVitals from "./reportWebVitals";
 const Routing = () => {
   return (
     <Router>
+      <Header />
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="about">About</Link>
-            </li>
-            <li>
-              <Link to="contact">Contact us</Link>
-            </li>
-            <li>
-              <Link to="login">Login</Link>
-            </li>
-            <li>
-              <Link to="register">Registration</Link>
-            </li>
-            <li>
-              <Link to="account">Account</Link>
-            </li>
-          </ul>
-        </nav>
         <Routes>
           <Route path="/" index element={<App />} />
           <Route path="/about" element={<About />} />
@@ -44,6 +25,7 @@ const Routing = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="/account" element={<Account />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

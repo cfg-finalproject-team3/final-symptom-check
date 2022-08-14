@@ -4,14 +4,13 @@ const paperStyle = makeStyles((theme) => ({
   paper: {
     padding: 50,
     height: "auto",
-    width: 526,
+    // minWidth: "100%",
     margin: "20px auto",
+    // backgroundColor: "#f5f5f5",
     backgroundColor: "#f5f5f5 !important",
-
     borderRadius: "5% !important",
     color: "#070C3A",
   },
-
   btnStyle: {
     borderRadius: 15,
     backgroundColor: "#2368AD",
@@ -22,6 +21,7 @@ const paperStyle = makeStyles((theme) => ({
   typography: {
     fontFamily: "Montserrat",
   },
+
 }));
 
 export default paperStyle;
