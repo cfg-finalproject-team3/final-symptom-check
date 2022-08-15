@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import './Test.css'
+import Typography from '@mui/material/Typography';
 
 function Test() {
 
@@ -25,30 +26,48 @@ function Test() {
   };
 
   return (
-    <div className="test-container">
-     <span className="test-title">Tests</span>
+    <div>
+    <div className="personalinfo1"> <Typography  alignContent="end"  variant="h3" fontFamily="Montserrat" fontWeight={800} fontSize={20}>Tests</Typography></div>
 
      <div className="testbox">
-     <label className="test-title1">Test Name:</label>
-     <input className="test-input-2" type="text" onChange={(event) => {
-      setTestRes(event.target.value);
-    }}/>
-     <label className="test-title2">Test value:</label>
-     <input className="test-input-2" type="text" onChange={(event) => {
-      setTestVal(event.target.value);
-    }}/>
-    </div>
+         <label className="test-title1"></label>
+             <input className="test-input-2" 
+                    type="text" 
+                    placeholder="Test Name"
+                    onChange={(event) => {
+                     setTestRes(event.target.value);
+                     }}/>
 
-     <button className="addlistbtn" onClick={addToList}>Add to List</button>
+         <label className="test-title2"></label>
+              <input className="test-input-2" 
+                      type="text" 
+                      placeholder="Test Results"
+                      onChange={(event) => {
+                      setTestVal(event.target.value);
+                      }}/>
+          
+           <div className="clearfix1">       
+          <button className="addlistbtn" onClick={addToList}>+</button>
+          </div>
 
-     <h1 classname="test-title3">Test List</h1>
 
-     {testList.map((val, key) => {
-        return (
-        <div key={key}>  <h1>{val.testres}</h1>  <h1>{val.testvalue}</h1> 
-        </div>
-        );
-     })}
+          {/* <h1 classname="test-title3"><Typography  alignContent="end"  variant="h3" fontFamily="Montserrat" fontWeight={800} fontSize={20}>Test List</Typography></h1> */}
+
+            {testList.map((val, key) => {
+                    return (
+                  <div key={key}>  
+                  <li className="test-results-list">{val.testres}</li>  
+                  <li className="test-results-list">{val.testvalue}</li> 
+            </div>
+            );
+            })}
+         </div>
+                
+        <div className="clearfix"></div>
+
+         
+
+    
     </div>
   );
 }

@@ -166,40 +166,44 @@ function App() {
                 sx={{
                     minHeight: "100%",
                     backgroundPosition: "top left",
+                    // backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
                     backgroundImage:
-                        "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
+                        "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085926/symptom%20checker/background-2_x4nrgg.png)",
                 }}
             >
                 <div className="App">
-                    <div>
+                    <div className="center-test">
                         <Box
                             justifyContent="center"
-                            alignContent="center"
+                            spacing={0}
+                            direction="column"
+                            alignItems="center"
+
                             style={{
                                 paddingTop: 70,
                                 paddingBottom: 20,
-                                maxWidth: 1000,
                                 spacing:0,
                                 direction:"column",
                                 // minHeight:"10vh"
                             }}>
 
-                            <Typography margin={3} marginTop={10} marginBottom={5} alignContent="center" justifyContent="center" variant="h3" fontFamily="Montserrat" fontWeight={500}>
-                                How are you feeling today?</Typography>
+                            <div className="title-center"><Typography margin={3} marginTop={10} marginBottom={5} alignContent="center" justifyContent="center" variant="h3" fontFamily="Montserrat" fontWeight={500}>
+                                How are you feeling today?</Typography></div>
 
 
 
-                            <Alert severity="info" backgroundPosition="sticky" > 
+                           <div className="alert-center"><Alert severity="info" backgroundPosition="sticky" > 
                                 <AlertTitle>Info</AlertTitle>
                                 The symptom checker results show a list of possible conditions, not an actual diagnosis. <br></br> Consult your doctor if you are concerned.
                                 Enter more symptoms and test results for more accurate results, starting with your most severe symptom
 
 
-                            </Alert>
+                            </Alert></div> 
 
                         </Box>
 
-                        <Grid justifyContent="center" alignContent="center" >
+                        {/* <Grid justifyContent="center" alignContent="center" > */}
 
 
                             <input
@@ -225,20 +229,20 @@ function App() {
                             <div className="symptom-container">
                                 {/* list every symptom input ID: {item.id}*/}
 
+                                
+
                                 <ul>
+                                    {/* If Api works delete Stack */}
 
                                     <Stack direction="row" spacing={2}>
-                                        <li className="tag"><span className='tag-title'>Runny Nose</span><btn className='tag-close-icon'>x</btn></li>
-                                        <li className="tag"><span className='tag-title'>Tight Chest</span><i className='tag-close-icon'>x</i></li>
-                                        <li className="tag"><span className='tag-title'>Coughing</span><i className='tag-close-icon'>x</i></li>
-                                        <li className="tag"><span className='tag-title'>Dummy Text Delete</span><i className='tag-close-icon'>x</i></li>
+                                        <li className="tag"><span className='tag-title'>Runny Nose</span></li>
+                                        <li className="tag"><span className='tag-title'>Tight Chest</span></li>
+                                        <li className="tag"><span className='tag-title'>Coughing</span></li>
+                                        <li className="tag"><span className='tag-title'>Hedache</span></li>
 
                                     </Stack>
 
-                                    {/* <Stack direction="row" spacing={1}>
-                                        <Chip label="Deletable" />
-                                        <Chip label="Deletable" variant="outlined" />
-                                    </Stack> */} 
+                                
 
                                     {patientSymptoms.map((item) => {
                                         return (
@@ -250,7 +254,7 @@ function App() {
                                 </ul>
                             </div>
 
-                        </Grid>
+                        {/* </Grid> */}
 
 
 
@@ -258,9 +262,9 @@ function App() {
 
 
 
-                        <Grid>
-
-                            <div className="personalinfo"><span>Personal Information</span></div>
+                        {/* <Grid> */}
+                        
+                            <div className="personalinfo"> <Typography  alignContent="center"  variant="h3" fontFamily="Montserrat" fontWeight={800} fontSize={20}>Personal Information</Typography></div>
                             <div className="genderbox">
                                 <div className="gendertitle">
                                     <span>Gender</span>
@@ -295,16 +299,17 @@ function App() {
                                 />
                             </div>
 
+
+                         
+
+                        {/* </Grid> */}
+
+            
+                        <Grid>
+                        <Test />
                         </Grid>
 
-
-                        <Test />
-
-
-
-
-                        <Grid>
-                            <div className="btncontainer">
+                        <div className="btncontainer">
                                 <button className="diagnosebtn" onClick={getDiagnosis}>Diagnose</button>
                             </div>
 
@@ -312,29 +317,30 @@ function App() {
 
 
 
-
-
-
+                        {/* <Grid> */}
                             <div className="diagnoseresults-container">
-                                <Typography variant="h3">Diagnosis :</Typography>
+                                <Typography margin={3} marginTop={10} marginBottom={5} alignContent="center" justifyContent="center" variant="h4" fontFamily="Montserrat" fontWeight={500}>Take a look at our suggestions...</Typography>
+                            </div>
+                            <div className="diagnoseresults-body">
                                 <ul className="diagnoseresults">
                                     {conditions.map((condition) => {
                                         return <li key={condition.id}>{condition.name}</li>;
                                     })}
                                 </ul>
                             </div>
-                        </Grid>
+                            
+                        {/* </Grid> */}
 
                     </div>
+
+                      
+
 
 
                 </div>
 
             </Box>
         </>
-
-
-
 
     );
 }
