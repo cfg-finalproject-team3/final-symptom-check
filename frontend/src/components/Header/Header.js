@@ -22,6 +22,7 @@ const Header = (props) => {
     { name: "Contact", route: "/contact" },
     { name: "Login", route: "/login" },
     { name: "Register", route: "/register" },
+    
   ];
 
   const { window } = props;

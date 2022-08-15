@@ -4,12 +4,37 @@ import Test from "./components/About/Test"
 import './App.css';
 import './components/About/Test.css'
 import Box from "@mui/material/Box";
+import { Grid, Container } from "@material-ui/core";
+import Stack from '@mui/material/Stack';
+import * as React from 'react';
+// // import paperStyle from "./loginStyles";
+// import { Paper} from "@material-ui/core";
+// import { styled } from '@mui/system';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import { Close } from '@mui/icons-material';
+import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Chip from '@mui/material/Chip';
+
+
 
 
 
 
 
 function App() {
+
+
+
+
+
+
+
     //All symptoms available
     const [symptoms, setSymptoms] = useState([]);
 
@@ -27,6 +52,7 @@ function App() {
 
     //Age
     const [age, setAge] = useState(0);
+
 
 
 
@@ -88,12 +114,12 @@ function App() {
             //     JSON.stringify(res.data.conditions)
             // );
             const allResults = JSON.parse(localStorage.getItem('conditions'))
-                  if(allResults === null) 
-                            allResults = []
-                     allResults.push
-                        (res.data.conditions);
-                            localStorage.setItem("conditions", 
-                            JSON.stringify(allResults))
+            if (allResults === null)
+                allResults = []
+            allResults.push
+                (res.data.conditions);
+            localStorage.setItem("conditions",
+                JSON.stringify(allResults))
             setConditions(res.data.conditions)
         });
 
@@ -113,9 +139,9 @@ function App() {
             patientSymptoms.length < 1
                 ? [{ id: symptom[0].id, name: symptom[0].name }]
                 : [
-                      ...patientSymptoms,
-                      { id: symptom[0].id, name: symptom[0].name },
-                  ]
+                    ...patientSymptoms,
+                    { id: symptom[0].id, name: symptom[0].name },
+                ]
         );
 
         setPatientSymptom("");
@@ -128,124 +154,188 @@ function App() {
 
     console.log(gender);
     console.log(patientSymptom);
+
+
+
+
+
+
     return (
         <>
-      <Box
-        sx={{
-          minHeight: "100%",
-          backgroundPosition: "top left",
-          backgroundImage:
-            "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
-        }}
-      >
-        <div className="App">
-            <div>
-                 <h1 className="headers"> How are you feeling today?</h1>
-                <input
-                    className="testinput"
-                    list="symptoms"
-                    value={patientSymptom}
-                    placeholder="        Please type your symptom here"
-                    onChange={(e) => {
-                        setPatientSymptom(e.target.value);
-                    }}
-                />
+            <Box
+                sx={{
+                    minHeight: "100%",
+                    backgroundPosition: "top left",
+                    backgroundImage:
+                        "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
+                }}
+            >
+                <div className="App">
+                    <div>
+                        <Box
+                            justifyContent="center"
+                            alignContent="center"
+                            style={{
+                                paddingTop: 70,
+                                paddingBottom: 20,
+                                maxWidth: 1000,
+                                spacing:0,
+                                direction:"column",
+                                // minHeight:"10vh"
+                            }}>
 
-                  {/* make a options of symptoms */}
-                  <datalist id="symptoms">
-                    {symptoms.map((symptom) => {
-                        return <option key={symptom.id} value={symptom.name} />;
-                    })}
-                </datalist>
+                            <Typography margin={3} marginTop={10} marginBottom={5} alignContent="center" justifyContent="center" variant="h3" fontFamily="Montserrat" fontWeight={500}>
+                                How are you feeling today?</Typography>
 
-                <button className="addbtn" onClick={addSymptomHandler}> Add Symptom</button>
 
-                <div className="symptom-container">
-                    {/* list every symptom input ID: {item.id}*/}
 
-                    <ul>
-                      <h2>Symptoms List</h2>
-                
-                        {patientSymptoms.map((item) => {
-                            return (
-                                <li key={item.id}>
-                                    {item.name} 
-                                </li>
-                            );
-                        })}
-                    </ul>
+                            <Alert severity="info" backgroundPosition="sticky" > 
+                                <AlertTitle>Info</AlertTitle>
+                                The symptom checker results show a list of possible conditions, not an actual diagnosis. <br></br> Consult your doctor if you are concerned.
+                                Enter more symptoms and test results for more accurate results, starting with your most severe symptom
+
+
+                            </Alert>
+
+                        </Box>
+
+                        <Grid justifyContent="center" alignContent="center" >
+
+
+                            <input
+                                className="testinput"
+                                list="symptoms"
+                                value={patientSymptom}
+                                placeholder="Please type your symptom here"
+                                marginBottom={10}
+                                onChange={(e) => {
+                                    setPatientSymptom(e.target.value);
+                                }}
+                            />
+
+                            {/* make a options of symptoms */}
+                            <datalist id="symptoms">
+                                {symptoms.map((symptom) => {
+                                    return <option key={symptom.id} value={symptom.name} />;
+                                })}
+                            </datalist>
+
+                            <button className="addbtn" onClick={addSymptomHandler}> Add Symptom</button>
+
+                            <div className="symptom-container">
+                                {/* list every symptom input ID: {item.id}*/}
+
+                                <ul>
+
+                                    <Stack direction="row" spacing={2}>
+                                        <li className="tag"><span className='tag-title'>Runny Nose</span><btn className='tag-close-icon'>x</btn></li>
+                                        <li className="tag"><span className='tag-title'>Tight Chest</span><i className='tag-close-icon'>x</i></li>
+                                        <li className="tag"><span className='tag-title'>Coughing</span><i className='tag-close-icon'>x</i></li>
+                                        <li className="tag"><span className='tag-title'>Dummy Text Delete</span><i className='tag-close-icon'>x</i></li>
+
+                                    </Stack>
+
+                                    {/* <Stack direction="row" spacing={1}>
+                                        <Chip label="Deletable" />
+                                        <Chip label="Deletable" variant="outlined" />
+                                    </Stack> */} 
+
+                                    {patientSymptoms.map((item) => {
+                                        return (
+                                            <li key={item.id}>
+                                                {item.name}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+
+                        </Grid>
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <div className="personalinfo"><span>Personal Information</span></div>
+                            <div className="genderbox">
+                                <div className="gendertitle">
+                                    <span>Gender</span>
+                                </div >
+
+
+
+                                <input
+                                    className="gendertitle"
+                                    type="radio"
+                                    value="male"
+                                    name="gender"
+                                    onClick={(e) => setGender(e.target.value)}
+                                />
+                                <span className="gendertitle">Male</span>
+                                <input
+                                    type="radio"
+                                    value="female"
+                                    name="gender"
+                                    onClick={(e) => setGender(e.target.value)}
+                                />
+                                <span className="gendertitle">Female</span>
+
+                                <span className="agetitle">Age :</span>
+                                <input
+                                    className="age"
+                                    type="number"
+                                    value={age === 0 ? "" : age}
+                                    onChange={(e) => {
+                                        setAge(e.target.value);
+                                    }}
+                                />
+                            </div>
+
+                        </Grid>
+
+
+                        <Test />
+
+
+
+
+                        <Grid>
+                            <div className="btncontainer">
+                                <button className="diagnosebtn" onClick={getDiagnosis}>Diagnose</button>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div className="diagnoseresults-container">
+                                <Typography variant="h3">Diagnosis :</Typography>
+                                <ul className="diagnoseresults">
+                                    {conditions.map((condition) => {
+                                        return <li key={condition.id}>{condition.name}</li>;
+                                    })}
+                                </ul>
+                            </div>
+                        </Grid>
+
+                    </div>
+
+
                 </div>
-                 
 
-
-
-
-
-
-
-                <div className="personalinfo"><span>Personal Information</span></div>
-                <div className="genderbox">
-                  <div className="gendertitle">
-                      <span>Gender</span>
-                  </div >
-                    <input
-                        className="gendertitle"
-                        type="radio"
-                        value="male"
-                        name="gender"
-                        onClick={(e) => setGender(e.target.value)}
-                    />
-                    <span className="gendertitle">Male</span>
-                    <input
-                        type="radio"
-                        value="female"
-                        name="gender"
-                        onClick={(e) => setGender(e.target.value)}
-                    />
-                    <span className="gendertitle">Female</span>
-
-                    <span className="agetitle">Age :</span>
-                    <input
-                        className="age"
-                        type="number"
-                        value={age === 0 ? "" : age}
-                        onChange={(e) => {
-                            setAge(e.target.value);
-                        }}
-                    />
-                </div>
-
-
-                <div className="btncontainer">                
-                  <button className="diagnosebtn" onClick={getDiagnosis}>Diagnose</button>
-                </div>
-
-
-      
-
-                
-               
-
-
-                <div className="diagnoseresults-container">
-                    <h2>Diagnosis :</h2>
-                    <ul className="diagnoseresults">
-                        {conditions.map((condition) => {
-                            return <li key={condition.id}>{condition.name}</li>;
-                        })}
-                    </ul>
-                </div>
-            </div>
-                
-                <Test />
-        </div>
-
-        </Box>
+            </Box>
         </>
 
 
 
-                        
+
     );
 }
 

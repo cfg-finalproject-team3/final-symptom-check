@@ -30,11 +30,11 @@ function Test() {
 
      <div className="testbox">
      <label className="test-title1">Test Name:</label>
-     <input type="text" onChange={(event) => {
+     <input className="test-input-2" type="text" onChange={(event) => {
       setTestRes(event.target.value);
     }}/>
      <label className="test-title2">Test value:</label>
-     <input type="text" onChange={(event) => {
+     <input className="test-input-2" type="text" onChange={(event) => {
       setTestVal(event.target.value);
     }}/>
     </div>

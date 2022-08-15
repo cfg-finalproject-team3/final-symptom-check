@@ -5,6 +5,23 @@
     margin-left: 1em;   
 }
 
+.test-input-2 {
+    background-color: #F5F5F5;
+    border:0px solid #ffff; 
+    border-radius: 1em !important;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 1em;
+    line-height: normal;
+    outline: none;
+    position: relative;
+    height: 3em;
+    width: 10em;
+    margin-left: 1em;
+    margin-top: 0.1em;
+    padding: 1%;
+}
+
 .test-title1 {
     color: #000;
     text-align: center;
@@ -43,13 +60,13 @@
   }
   
 .addlistbtn:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: #3373b3;
     color: white;
   }
 
   .test-container {
     text-align: start;
-    background-color: #2368AD;
+    background-color: #2B6DDF;
     border:0px solid #ffff; 
     border-bottom: 0px;
     border-top-left-radius: 25px;
@@ -60,7 +77,7 @@
     position: relative;
     height: 4em;
     width: 50em;
-    margin-left: 20em;
+    /* margin-left: 20em; */
     margin-top: 5em;
     padding-left: 3em;
     padding-top: -1em;

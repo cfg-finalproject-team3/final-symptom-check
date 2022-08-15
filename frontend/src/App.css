@@ -13,6 +13,39 @@ body {
 }
 
 
+.tag-close-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: smaller;
+  margin-left: 12px;
+  color: #2B6DDF;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.tag {
+	width: auto;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	padding: 0 10px;
+	font-size: smaller;
+	list-style: none;
+	border-radius: 12px;
+	margin: 0 8px 8px 0;
+	background: #2B6DDF;
+}
+	
+  /* .tag-title {
+		margin-top: 3px;
+	} */
+
 .testinput {
   background: #efefef;
   border:0px solid #ffff; 
@@ -23,10 +56,10 @@ body {
   line-height: normal;
   outline: none;
   position: relative;
-  height: 4em;
+  height: 4em; 
   width: 50em;
-  margin-left: 20em;
-  margin-top: 5em;
+  padding: 2%;
+
 }
 
 
@@ -49,14 +82,14 @@ body {
 }
 
 .addbtn:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #3373b3;
   color: white;
 }
 
 
 .personalinfo {
   text-align: start;
-  background-color: #2368AD;
+  background-color: #2B6DDF;
   border:0px solid #ffff; 
   border-bottom: 0px;
   border-top-left-radius: 25px;
@@ -67,7 +100,7 @@ body {
   position: relative;
   height: 4em;
   width: 50em;
-  margin-left: 20em;
+  /* margin-left: 20em; */
   margin-top: 5em;
   padding-left: 3em;
   padding-top: 1em;
@@ -86,7 +119,7 @@ body {
       position: relative;
       height: 6em;
       width: 50em;
-      margin-left: 20em;
+      /* margin-left: 20em; */
       padding-left: 3em;
       padding-top: 1em;
       border-bottom-left-radius: 25px;
@@ -109,10 +142,20 @@ body {
 }
 
 .age {
-  background: #efefef;
-  border:1px solid rgb(128, 128, 128); 
-  border-radius: 1em !important;
-  box-sizing: border;
+  background-color: #D8E4F1;
+    border:0px solid #ffff; 
+    border-radius: 1em !important;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 1em;
+    line-height: normal;
+    outline: none;
+    position: relative;
+    height: 2em;
+    width: 3.5em;
+    margin-left: 1em;
+    margin-top: 0.1em;
+    padding: 1%;
 }
 
 
@@ -141,7 +184,7 @@ body {
 }
 
 .diagnosebtn:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #3373b3; 
   color: white;
 }
 
@@ -154,10 +197,12 @@ body {
   outline: none;
   position: relative;
   height: 4em;
-  width: 50em;
+  margin: 0 auto;
+
+  /* width: 50em;
       margin-left: 19em;
       padding-left: 3em;
-      padding-top: 1em;
+      padding-top: 1em; */
 }
 
 
@@ -173,7 +218,7 @@ body {
   position: relative;
   height: 15em;
   width: 50em;
-  margin-left: 20em;
+  /* margin-left: 20em; */
   margin-top: 5em;
   padding-left: 3em;
   padding-top: 1em;
@@ -186,7 +231,7 @@ body {
   position: relative;
   height: 15em;
   width: 50em;
-  margin-left: 20em;
+  /* margin-left: 20em; */
   margin-top: 5em;
   padding-left: 3em;
   padding-top: 1em;

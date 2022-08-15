@@ -11,6 +11,7 @@ import Box from '@mui/material/Box'
 import { border, borderColor } from '@mui/system';
 
 
+
 export default function About() {
   return (
   
@@ -29,7 +30,7 @@ export default function About() {
             "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
         }}>
       </Box></>
-      <Typography margin={3} marginTop={10} align="center" variant="h3" fontFamily="Montserrat" fontWeight={600}>
+      <Typography margin={3} marginTop={10} align="center" variant="h3" fontFamily="Montserrat" fontWeight={500}>
         Who We Are
       </Typography>
     </div>

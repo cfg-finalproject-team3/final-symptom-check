@@ -10,6 +10,7 @@ import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
 import Account from "./components/Account/Account";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 import reportWebVitals from "./reportWebVitals";
 
 const Routing = () => {
@@ -24,6 +25,8 @@ const Routing = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/account" element={<Account />} />
+          <Route path="*" element={<ErrorPage />} />
+         
         </Routes>
         <Footer />
       </div>
