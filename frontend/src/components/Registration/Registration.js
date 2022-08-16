@@ -27,6 +27,11 @@ function Registration() {
   const [passwordReg, setPasswordReg] = useState("");
   const [msg, setMsg] = useState(null);
 
+  const [firstNameVal, setFirstNameVal] = useState("");
+  const [lastNameVal, setLastNameVal] = useState("");
+  const [emailVal, setEmailVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
+
   const register = () => {
     Axios({
       method: "POST",
@@ -154,8 +159,11 @@ function Registration() {
                             className={classes.textField}
                             onChange={(e) => {
                               setFirstNameReg(e.target.value);
+                              setFirstNameVal(e.target.value)
                             }}
                             required
+                            error={firstNameVal === ""}
+                            helperText={firstNameVal === "" ? "This field is required" : " "}
                           />
                           <TextField
                             label="Last Name"
@@ -168,8 +176,11 @@ function Registration() {
                             className={classes.textField}
                             onChange={(e) => {
                               setLastNameReg(e.target.value);
+                              setLastNameVal(e.target.value);
                             }}
                             required
+                            error={lastNameVal === ""}
+                            helperText={lastNameVal === "" ? "This field is required" : " "}
                           />
                           <TextField
                             label="Email address"
@@ -182,8 +193,11 @@ function Registration() {
                             className={classes.textField}
                             onChange={(e) => {
                               setEmailReg(e.target.value);
+                              setEmailVal(e.target.value)
                             }}
                             required
+                            error={emailVal === ""}
+                            helperText={emailVal === "" ? "This field is required" : " "}
                           />
 
                           <TextField
@@ -196,8 +210,11 @@ function Registration() {
                             className={classes.textField}
                             onChange={(e) => {
                               setPasswordReg(e.target.value);
+                              setPasswordVal(e.target.value)
                             }}
                             required
+                            error={passwordVal.length < 8}
+                            helperText={passwordVal === "" ? "Password must be 8+ characters" : " "}
                           />
                           <Typography variant="subtitle1" gutterBottom>
                             <span className="line">

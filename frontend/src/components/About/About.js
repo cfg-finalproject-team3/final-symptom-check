@@ -22,6 +22,8 @@ export default function About() {
         sx={{
           minHeight: "100%",
           position: "fixed",
+          minHeight: "100%",
+          backgroundSize: "cover",
           zIndex: -1,
           inset: 0,
           display: { xs: "none", sm: "block" },
@@ -30,7 +32,7 @@ export default function About() {
             "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
         }}>
       </Box></>
-      <Typography margin={3} marginTop={10} align="center" variant="h3" fontFamily="Montserrat" fontWeight={500}>
+      <Typography margin={5} marginTop={15} align="center" variant="h3" fontFamily="Montserrat" fontWeight={500} color="#070C3A">
         Who We Are
       </Typography>
     </div>

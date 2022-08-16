@@ -132,14 +132,14 @@ const Account = () => {
               </h4>
             ) : null}
  
- <Link href="/" color="#585858">
+ <Link href="#" color="#585858">
           Edit Profile
         </Link><br>
         </br>
-            <Link href="/" color="#585858">
+            <Link href="#" color="#585858">
           Contact Preferences
         </Link><br></br>
-            <Link href="/" color="#ffffff">
+            <Link href="#" color="#ffffff">
           Search history
         </Link><br></br>
         </section>

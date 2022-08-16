@@ -26,7 +26,7 @@ function Test() {
   };
 
   return (
-    <div>
+    <div className="center-test-results">
     <div className="personalinfo1"> <Typography  alignContent="end"  variant="h3" fontFamily="Montserrat" fontWeight={800} fontSize={20}>Tests</Typography></div>
 
      <div className="testbox">

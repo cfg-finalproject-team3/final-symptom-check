@@ -24,6 +24,9 @@ function Login() {
   const [passwordLogin, setPasswordLogin] = useState("");
   const [msg, setMsg] = useState(null);
 
+  const [emailLoginVal, setEmailLoginVal] = useState("");
+  const [passwordLoginVal, setPasswordLoginVal] = useState("");
+
   const login = () => {
     Axios({
       method: "POST",
@@ -103,8 +106,11 @@ function Login() {
                   className={classes.textField}
                   onChange={(e) => {
                     setEmailLogin(e.target.value);
+                    setEmailLoginVal(e.target.value)
                   }}
                   required
+                  error={emailLoginVal === ""}
+                  helperText={emailLoginVal === "" ? "This field is required" : " "}
                 />
 
                 <TextField
@@ -117,8 +123,11 @@ function Login() {
                   className={classes.textField}
                   onChange={(e) => {
                     setPasswordLogin(e.target.value);
+                    setPasswordLoginVal(e.target.value)
                   }}
                   required
+                  error={passwordLoginVal.length < 8}
+                  helperText={passwordLoginVal === "" ? "Password must be 8+ characters" : " "}
                 />
                 <Typography variant="subtitle2" gutterBottom>
                   <span className="line">
