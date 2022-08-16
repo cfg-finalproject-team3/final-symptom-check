@@ -1,7 +1,7 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -13,17 +13,26 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useAuthState } from "../../context/AuthProvider";
 
 const Header = (props) => {
+  const { auth, setAuth } = useAuthState();
   const drawerWidth = 240;
-  const navItems = [
-    { name: "Home", route: "/" },
-    { name: "About", route: "/about" },
-    { name: "Contact", route: "/contact" },
-    { name: "Login", route: "/login" },
-    { name: "Register", route: "/register" },
-    
-  ];
+
+  const navItems = auth?.authenticated
+    ? [
+        {
+          name: "Logout",
+          route: "/",
+        },
+      ]
+    : [
+        { name: "Home", route: "/" },
+        { name: "About", route: "/about" },
+        { name: "Contact", route: "/contact" },
+        { name: "Login", route: "/login" },
+        { name: "Register", route: "/register" },
+      ];
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -44,7 +53,12 @@ const Header = (props) => {
           <ListItem
             key={item.name}
             disablePadding
-            onClick={() => console.log(item.route)}
+            onClick={() => {
+             if ( item.name === "Logout") {
+              setAuth({ authenticated: false })
+             }
+
+            }}
           >
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item.name} />
@@ -94,7 +108,7 @@ const Header = (props) => {
                 <Button
                   key={item.name}
                   sx={{
-                    color: "#000",
+                    color: "#2B6DDF",
                     fontWeight: "bold",
                     ...(item.name === "Register"
                       ? {
@@ -103,6 +117,11 @@ const Header = (props) => {
                           color: "#ffffff",
                         }
                       : {}),
+                  }}
+                  onClick={() => {
+                    if ( item.name === "Logout") {
+                      setAuth({ authenticated: false })
+                     }
                   }}
                 >
                   {item.name}
@@ -132,7 +151,6 @@ const Header = (props) => {
           {drawer}
         </Drawer>
       </Box>
-
     </Box>
   );
 };

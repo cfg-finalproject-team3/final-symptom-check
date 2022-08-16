@@ -15,6 +15,7 @@ import Container from "@mui/material/Container";
 import { Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
  
 const Account = () => {
@@ -93,13 +94,39 @@ const Account = () => {
 
 
       <section className={classes.container}>
+
+      <Grid container
+              justifyContent="center"
+              style={{
+                paddingTop: 40,
+                paddingBottom: 20,
+              }}>
+
+      <Typography
+                  color="#070C3A"
+                  margin={3}
+                  marginTop={10}
+                  marginBottom={5}
+                  alignContent="center"
+                  justifyContent="center"
+                  variant="h3"
+                  fontFamily="Montserrat"
+                  fontWeight={500}
+                >
+                 <div>{data ? <span>Welcome Back {data.firstName}!</span> : null}</div>
+                </Typography>
+                </Grid>
+
+        
       <Container>
         <Grid container
               justifyContent="center"
               style={{
-                paddingTop: 200,
-                paddingBottom: 200,
+                paddingTop: 20,
+                paddingBottom: 300,
               }}>
+
+
              
           <Grid
             item
@@ -112,41 +139,54 @@ const Account = () => {
               paddingRight: 50,
             }}
             >
-            <section style={{marginTop: "50px",
-            paddingTop: 100,
-            textAlign: "center",}}><div>{data ? <h1>Welcome Back {data.firstName}!</h1> : null}</div></section>
-            <section>
-            <h3 style={{paddingBottom: "20px",
+            <section alignContent="center">
 
-}}
-            >Dashboard</h3>
+            <Typography 
+            color="#070C3A" 
+            fontSize={30}
+            fontWeight={150}>
+            <h3 style={{paddingBottom: "20px",}}>Dashboard</h3>
+            </Typography>
+
             <img
               src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660527483/symptom%20checker/profile_jml80p.png"
               alt="user avatar"
             />
  
       
-            {data ? (
-              <h4>
+           <Typography
+           margin={3}
+           marginTop={3}
+           marginBottom={3}
+           alignContent="center"
+           justifyContent="center"
+           variant="h6"
+           fontFamily="Montserrat"
+           fontWeight={300}
+           fontSize={40}>
+            <div> {data ? (
+              <h6>
                 {data.firstName} {data.lastName}
-              </h4>
+              </h6>
             ) : null}
+            </div>
+            </Typography>
  
- <Link href="#" color="#585858">
+ <Link fontWeight={"medium"} margin={3} marginTop={3} marginBottom={3}  underline="hover" href="#" color="#585858">
           Edit Profile
-        </Link><br>
+        </Link ><br>
         </br>
-            <Link href="#" color="#585858">
+            <Link fontWeight={"medium"} margin={3} paddingBottom={10} underline="hover" href="#" color="#585858">
           Contact Preferences
-        </Link><br></br>
-            <Link href="#" color="#ffffff">
+        </Link ><br></br>
+            <Link fontWeight={"bold"} margin={3} paddingBottom={10} underline="hover" href="#" color="#ffffff">
           Search history
         </Link><br></br>
         </section>
           </Grid>
  
 
-        <Grid item xs={10} md={9} style={{marginTop: "150px",}}>
+        <Grid item xs={10} md={9} style={{marginTop: "20",}}>
         <Paper elevation={10}>
         <section>
           
@@ -208,4 +248,3 @@ const Account = () => {
 };
  
 export default Account;
-

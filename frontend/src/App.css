@@ -1,8 +1,7 @@
-
-
 * {
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   max-width: 100%;
   height: auto;
@@ -16,9 +15,13 @@ body {
 .test-input-center {
   align-content: center;
   display: flex;
+  flex-wrap: wrap;
+  height: auto;
   justify-content: center;
   padding-top: 2%;
+  padding-bottom: 2%;
 }
+
 .test-input-btn-center {
   align-content: center;
   display: flex;
@@ -36,25 +39,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .alert-center1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 65em;
+  max-width: 55em;
   margin-left: auto;
   margin-right: auto;
 }
 
-.personalinfo-center{
+.personalinfo-center {
   display: block;
   align-items: center;
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: auto;
 
 
 }
@@ -77,11 +83,12 @@ body {
   width: auto;
   height: auto;
   min-height: 40px;
-  display: flex;
+  display: inline;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   color: #070C3A;
-  padding: 2px 15px;
+  padding: 15px 15px;
   font-size: 18px;
   list-style: none;
   border-radius: 12px;
@@ -92,15 +99,15 @@ body {
     0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
 }
 
-.tag-title {
+/* .tag-title {
   margin-top: 3px;
-}
+} */
 
 .testinput {
   display: inline-block;
   background: white;
   border: 0px solid #ffff;
-  border-radius: 1em !important ;
+  border-radius: 1em !important;
   /* box-sizing: border-box; */
   color: #070c3a;
   font-size: 1em;
@@ -156,7 +163,7 @@ body {
   padding-left: 3em;
   padding-top: 1em;
   /* display: block; */
-  
+
 
 }
 
@@ -179,7 +186,7 @@ body {
   border-bottom-right-radius: 25px;
   box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
     0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
-    /* display: block; */
+  /* display: block; */
 }
 
 .gendertitle {
@@ -211,6 +218,7 @@ body {
   margin-top: 0.1em;
   padding: 1%;
 }
+
 
 .btncontainer {
   text-align: center;
@@ -245,10 +253,14 @@ body {
   color: #ffff;
   outline: none;
   position: relative;
-  height: 4em;
+  height: auto;
   margin: 0 auto;
-  max-width: 50em;
-  min-width: 22em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3%;
+  margin-right: 3%;
+
+
 
   /*
       margin-left: 19em;
@@ -258,9 +270,6 @@ body {
 
 .diagnoseresults-container {
   text-align: center;
-  color: ;
-
-  
 
 
 
@@ -296,7 +305,7 @@ body {
   list-style: none;
 
 
-  
+
 }
 
 .results-container {
@@ -308,6 +317,6 @@ body {
   border-radius: 25px;
   box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
     0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
 }

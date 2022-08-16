@@ -7,19 +7,10 @@ import Box from "@mui/material/Box";
 import { Grid, Container, Button, Paper } from "@material-ui/core";
 import Stack from "@mui/material/Stack";
 import * as React from "react";
-// // import paperStyle from "./loginStyles";
-// import { Paper} from "@material-ui/core";
-// import { styled } from '@mui/system';
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import { Close } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
-import Chip from "@mui/material/Chip";
+
 
 import paperStyle from "./AppStyles";
 
@@ -142,9 +133,9 @@ function App() {
     <>
       <Box
         sx={{
-          minHeight: "100%",
+          minHeight: "150%",
           backgroundPosition: "top left",
-          // backgroundRepeat: "no-repeat",
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundImage:
             "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085926/symptom%20checker/background-2_x4nrgg.png)",
@@ -314,14 +305,20 @@ function App() {
             </Grid>
 
             <div className="btncontainer">
-              <button className="diagnosebtn" onClick={getDiagnosis}>
+              <Button  
+              variant="contained"
+                color="primary"
+                className={classes.btnStyle}
+                marginTop="none"
+                // className="diagnosebtn" 
+                onClick={getDiagnosis}>
                 Diagnose
-              </button>
+              </Button>
             </div>
 
         
             <div className="diagnoseresults-body">
-            {/* <div className="diagnoseresults-container">
+            <div className="diagnoseresults-container">
               <Typography
                 margin={3}
                 marginTop={10}
@@ -334,42 +331,18 @@ function App() {
               >
                 Take a look at our suggestions...
               </Typography>
-            </div> */}
+            </div>
             <div className="results-container">
 
               <ul className="diagnoseresults">
 
-              {/* <div className="diagnoseresults-container">
-                  <Typography
-                    margin={3}
-                    marginTop={10}
-                    marginBottom={5}
-                    alignContent="center"
-                    justifyContent="center"
-                    variant="h4"
-                    fontFamily="Montserrat"
-                    fontWeight={500}
-                  >
-                    Take a look at our suggestions...
-                  </Typography>
-                </div> */}
+              <div className="diagnoseresults-container">
+                </div>
 
                 {conditions.map((condition) => {
                   return (
                     <>
                   <li className="diagnoseresults-list" key={condition.id}>{condition.name}</li>
-                  <Typography
-                    margin={3}
-                    marginTop={10}
-                    marginBottom={5}
-                    alignContent="center"
-                    justifyContent="center"
-                    variant="h4"
-                    fontFamily="Montserrat"
-                    fontWeight={500}
-                  >
-                    Take a look at our suggestions...
-                  </Typography>
                   
                 </>
                   )

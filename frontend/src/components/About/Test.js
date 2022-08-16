@@ -25,6 +25,10 @@ function Test() {
     });
   };
 
+  const deleteToList = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`);
+  };
+
   return (
     <div className="center-test-results">
     <div className="personalinfo1"> <Typography  alignContent="end"  variant="h3" fontFamily="Montserrat" fontWeight={800} fontSize={20}>Tests</Typography></div>
@@ -48,6 +52,9 @@ function Test() {
           
            <div className="clearfix1">       
           <button className="addlistbtn" onClick={addToList}>+</button>
+          
+
+    
           </div>
 
 
@@ -58,6 +65,7 @@ function Test() {
                   <div key={key}>  
                   <li className="test-results-list">{val.testres}</li>  
                   <li className="test-results-list">{val.testvalue}</li> 
+
             </div>
             );
             })}
@@ -73,4 +81,3 @@ function Test() {
 }
 
 export default Test;
-

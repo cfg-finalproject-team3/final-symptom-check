@@ -12,6 +12,7 @@ import Registration from "./components/Registration/Registration";
 import Account from "./components/Account/Account";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import reportWebVitals from "./reportWebVitals";
+import { AuthProvider } from "./context/AuthProvider";
 
 const Routing = () => {
   return (
@@ -26,7 +27,6 @@ const Routing = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="/account" element={<Account />} />
           <Route path="*" element={<ErrorPage />} />
-         
         </Routes>
         <Footer />
       </div>
@@ -37,7 +37,9 @@ const Routing = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Routing />
+    <AuthProvider>
+      <Routing />
+    </AuthProvider>
   </React.StrictMode>
 );
 
