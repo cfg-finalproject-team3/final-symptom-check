@@ -2,7 +2,9 @@ import React from "react";
 import "./Registration.css";
 import Axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Box from "@mui/material/Box";
+import { Container } from "@mui/system";
 
 import {
   Paper,
@@ -22,6 +24,12 @@ function Registration() {
   const [lastNameReg, setLastNameReg] = useState("");
   const [emailReg, setEmailReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
+  const [msg, setMsg] = useState(null);
+
+  const [firstNameVal, setFirstNameVal] = useState("");
+  const [lastNameVal, setLastNameVal] = useState("");
+  const [emailVal, setEmailVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
 
   const register = () => {
     Axios({
@@ -35,127 +43,210 @@ function Registration() {
       withCredentials: true,
       url: "http://localhost:4000/register",
     }).then((res) => {
-      if (res.status === 200) {
-        window.location.href = "/account";
+      setMsg(res.data);
+      if (res.data === "Registration Successful") {
+        window.location.href = "/login";
       }
     });
   };
 
-  const getUser = () => {
-    Axios({
-      method: "GET",
+  useEffect(() => {
+    register();
+  }, []);
 
-      withCredentials: true,
-      url: "http://localhost:4000/account",
-    }).then((res) => console.log(res));
-  };
+  if (!msg) return null;
 
   return (
     <>
-      <section className={classes.container}>
-        <Grid>
-          <Paper elevation={10} className={classes.paper}>
-            <section>
-              <Grid align="center">
-                <h1>Registration</h1>
+      <Box
+        sx={{
+          minHeight: "100%",
+          backgroundPosition: "top left",
+          backgroundImage:
+            "url(https://res.cloudinary.com/dl6pfjd5w/image/upload/v1660085941/symptom%20checker/background-1_kptzse.png)",
+        }}
+      >
+        {/* <Grid
+          container
+          justifyContent="center"
+          style={{
+            paddingTop: 200,
+            paddingBottom: 200,
+          }}
+        > */}
 
-                <Typography
-                  variant="subtitle2"
-                  gutterBottom
-                  className={classes.typography}
+        <section className={classes.container}>
+          <Container>
+            <Grid
+              container
+              justifyContent="center"
+              style={{
+                paddingTop: 200,
+                paddingBottom: 200,
+              }}
+            >
+              <Grid
+                item
+                xs={10}
+                md={6}
+                style={{
+                  color: "white",
+                  fontSize: "30px",
+                  textAlign: "left",
+                  paddingRight: 50,
+                  paddingTop: 100,
+                }}
+              >
+                Join Symptom <br></br>
+                Checker <br></br>
+                <br></br>
+                <span
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "20px",
+                  }}
                 >
-                  Already have an account?
-                  <span className="line">
-                    {/* Router link here */}
-                    <Link href="#" className={classes.formLink}>
-                      Login
-                    </Link>
-                  </span>
-                </Typography>
+                  A free symtpom
+                  <br></br>
+                  Checker App that <br></br>allows you to <br></br>
+                  investigate your <br></br>symptoms and <br></br>
+                  test results.
+                  <br></br>
+                  Sign up today save your <br></br>results and build your
+                  medical history
+                </span>
               </Grid>
 
-              <form>
-                <TextField
-                  label="First Name"
-                  variant="outlined"
-                  type="text"
-                  autoComplete="off"
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  className={classes.textField}
-                  onChange={(e) => {
-                    setFirstNameReg(e.target.value);
-                  }}
-                  required
-                />
-                <TextField
-                  label="Last Name"
-                  variant="outlined"
-                  type="text"
-                  autoComplete="off"
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  className={classes.textField}
-                  onChange={(e) => {
-                    setLastNameReg(e.target.value);
-                  }}
-                  required
-                />
-                <TextField
-                  label="Email address"
-                  variant="outlined"
-                  type="email"
-                  autoComplete="off"
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  className={classes.textField}
-                  onChange={(e) => {
-                    setEmailReg(e.target.value);
-                  }}
-                  required
-                />
+              <Grid item xs={10} md={6}>
+                <Paper elevation={10} className={classes.paper}>
+                  <section>
+                    <Grid align="center">
+                      <h1>Registration</h1>
 
-                <TextField
-                  variant="outlined"
-                  type="password"
-                  label="Password (8+ characters)"
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  className={classes.textField}
-                  onChange={(e) => {
-                    setPasswordReg(e.target.value);
-                  }}
-                  required
-                />
-                <Typography variant="subtitle1" gutterBottom>
-                  <span className="line">
-                    Want to stay up to date on the latest? <br />
-                    add extra line + buttons
-                  </span>
-                </Typography>
-                <br />
+                      <Typography
+                        variant="subtitle2"
+                        gutterBottom
+                        className={classes.typography}
+                      >
+                        Already have an account?
+                        <span className="line">
+                          {/* Router link here */}
+                          <Link href="#" className={classes.formLink}>
+                            Login
+                          </Link>
+                        </span>
+                      </Typography>
+                    </Grid>
 
-                <Button
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                  className={classes.btnStyle}
-                  onClick={register}
-                >
-                  Register
-                </Button>
-                <div>
-                  <button onClick={getUser}>Go to profile</button>
-                </div>
-              </form>
-            </section>
-          </Paper>
-        </Grid>
-      </section>
+                    <form>
+                      <TextField
+                        label="First Name"
+                        variant="outlined"
+                        type="text"
+                        autoComplete="off"
+                        fullWidth
+                        margin="normal"
+                        size="small"
+                        className={classes.textField}
+                        onChange={(e) => {
+                          setFirstNameReg(e.target.value);
+                          setFirstNameVal(e.target.value);
+                        }}
+                        required
+                        error={firstNameVal === ""}
+                        helperText={
+                          firstNameVal === "" ? "This field is required" : " "
+                        }
+                      />
+                      <TextField
+                        label="Last Name"
+                        variant="outlined"
+                        type="text"
+                        autoComplete="off"
+                        fullWidth
+                        margin="normal"
+                        size="small"
+                        className={classes.textField}
+                        onChange={(e) => {
+                          setLastNameReg(e.target.value);
+                          setLastNameVal(e.target.value);
+                        }}
+                        required
+                        error={lastNameVal === ""}
+                        helperText={
+                          lastNameVal === "" ? "This field is required" : " "
+                        }
+                      />
+                      <TextField
+                        label="Email address"
+                        variant="outlined"
+                        type="email"
+                        autoComplete="off"
+                        fullWidth
+                        margin="normal"
+                        size="small"
+                        className={classes.textField}
+                        onChange={(e) => {
+                          setEmailReg(e.target.value);
+                          setEmailVal(e.target.value);
+                        }}
+                        required
+                        error={emailVal === ""}
+                        helperText={
+                          emailVal === "" ? "This field is required" : " "
+                        }
+                      />
+
+                      <TextField
+                        variant="outlined"
+                        type="password"
+                        label="Password (8+ characters)"
+                        fullWidth
+                        margin="normal"
+                        size="small"
+                        className={classes.textField}
+                        onChange={(e) => {
+                          setPasswordReg(e.target.value);
+                          setPasswordVal(e.target.value);
+                        }}
+                        required
+                        error={passwordVal.length < 8}
+                        helperText={
+                          passwordVal.length < 8
+                            ? "Password must be 8+ characters"
+                            : " "
+                        }
+                      />
+                      <Typography variant="subtitle1" gutterBottom>
+                        <span className="line">
+                          Want to stay up to date on the latest? <br />
+                          add extra line + buttons
+                        </span>
+                      </Typography>
+                      <br />
+
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        className={classes.btnStyle}
+                        onClick={register}
+                      >
+                        Register
+                      </Button>
+                      <Grid align="center">
+                        <section>
+                          <p>{msg}</p>
+                        </section>
+                      </Grid>
+                    </form>
+                  </section>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Container>
+        </section>
+      </Box>
     </>
   );
 }

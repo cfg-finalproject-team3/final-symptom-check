@@ -1,38 +1,307 @@
-/* .App {
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  max-width: 100%;
+  height: auto;
+}
+
+.headers {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.test-input-center {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.test-input-btn-center {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.title-center {
+  align-content: center;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.alert-center {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.alert-center1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 55em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.personalinfo-center {
+  display: block;
+  align-items: center;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: auto;
+}
+
+/* .tag-close-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: smaller;
+  margin-left: 12px;
+  color: #2B6DDF;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+} */
+
+.tag {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  display: inline;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: #070c3a;
+  padding: 15px 15px;
+  font-size: 18px;
+  list-style: none;
+  border-radius: 12px;
+  /* margin: 0 8px 8px 0; */
+  background: #e8f4fd;
+  /* border: 1px solid #e3e3e3; */
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+    0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
+}
+
+/* .tag-title {
+  margin-top: 3px;
+} */
+
+.testinput {
+  display: inline-block;
+  background: white;
+  border: 0px solid #ffff;
+  border-radius: 1em !important;
+  /* box-sizing: border-box; */
+  color: #070c3a;
+  font-size: 1em;
+  /* line-height: normal; */
+  /* outline: none; */
+  /* position: relative; */
+  height: 4em;
+  width: 85%;
+  max-width: 50em;
+  min-width: 50%;
+  margin-left: 3%;
+  margin-right: 3%;
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+    0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
+  padding-left: 15px;
+}
+
+.addbtn {
+  background-color: #2368ad;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.addbtn {
+  transition-duration: 0.4s;
+}
+
+.addbtn:hover {
+  background-color: #3373b3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.personalinfo {
+  text-align: start;
+  background-color: #2b6ddf;
+  border: 0px solid #ffff;
+  border-bottom: 0px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 4em;
+  /* max-width: 50em; */
+  /* margin-top: 5em; */
+  padding-left: 3em;
+  padding-top: 1em;
+  /* display: block; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.genderbox {
+  text-align: start;
+  background-color: #ffff;
+  border: 0px solid #ffff;
+
+  box-sizing: border-box;
+  color: #070c3a;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: 6em;
+  /* max-width: 50em; */
+  padding-left: 3em;
+  padding-top: 1em;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+    0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
+  /* display: block; */
+}
+
+.gendertitle {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.gendertitle[type="radio"] {
+  margin: 0 10px 0 10px;
+}
+
+.agetitle {
+  padding-left: 14em;
+}
+
+.age {
+  background-color: #f5f5f5;
+  border: 0.3px solid #e3e3e3;
+  border-radius: 1em !important;
+  box-sizing: border-box;
+  color: #070c3a;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: 2em;
+  width: 3.5em;
+  margin-left: 1em;
+  margin-top: 0.1em;
+  padding: 1%;
+}
+
+.btncontainer {
+  text-align: center;
+  padding-top: 3em;
+}
+
+.diagnosebtn {
+  padding-left: 10em;
+  background-color: #2368ad;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.diagnosebtn {
+  transition-duration: 0.4s;
+}
+
+.diagnosebtn:hover {
+  background-color: #3373b3;
+  color: white;
+}
+
+.symptom-container {
+  text-align: center;
+  border: 0px solid #ffff;
+  color: #ffff;
+  outline: none;
+  position: relative;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  /*
+      margin-left: 19em;
+      padding-left: 3em;
+      padding-top: 1em; */
+}
+
+.diagnoseresults-container {
+  text-align: center;
+}
+
+.diagnoseresults-body {
+  text-align: center;
+  border: 0px solid #ffff;
+  color: #070c3a;
+  outline: none;
+  position: relative;
+  height: auto;
+  margin: 0 auto;
+}
+
+.diagnosisresults {
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 15em;
+  width: 50em;
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+  list-style: none;
+}
+
+.diagnoseresults-list {
+  color: #070c3a;
+  font-size: 20px;
+  padding-top: 8px;
+  list-style: none;
+}
+
+.results-container {
+  background-color: white;
+  max-width: 50em;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+    0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
+  margin-bottom: 20px;
+}

@@ -1,51 +1,52 @@
-// const express = require("express");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const app = express();
 
-// const mysql = require("mysql");
-// const cors = require("cors");
 
-// const app = express();
 
-// app.use(express.json());
-// app.use(cors());
+const TestModel = require("./models/Testresult");
 
-// const db = mysql.createConnection({
-//   user: "root",
-//   host: "localhost",
-//   password: "",
-//   database: "usersdb",
-// });
+app.use(express.json());
+app.use(cors());
 
-// // app.get("/select", (req, res) => {
-// //   const userEmail = "another@t.com";
-// //   const password = 456;
+mongoose.connect(
+    "mongodb+srv://cfg3:cfg12345@cluster0.ryuittd.mongodb.net/test?retryWrites=true&w=majority",
+     {
+    useNewUrlParser: true,
+     }
+);
 
-// //   db.query("SELECT * FROM usersdb.users", (err, result) => {
-// //     if (err) {
-// //       console.log(err);
-// //     }
-// //     res.send(result);
-// //   });
-// // });
 
-// app.post("/register", (req, res) => {
-//   const firstName = req.body.firstName;
-//   const lastName = req.body.lastName;
-//   const email = req.body.username;
-//   const password = req.body.username;
+app.post("/insert", async (req, res) => {
 
-//   db.query(
-//     "INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)",
-//     [firstName, lastName, email, password],
+    const testRes = req.body.testRes
+    const testVal = req.body.testVal
 
-//     (err, result) => {
-//       if (err) {
-//         console.log(err);
-//       }
-//       res.send(result);
-//     }
-//   );
-// });
+    const searchtest = new TestModel(({ date: new Date(), testres: testRes, testvalue: testVal }));
 
-// app.listen(3001, () => {
-//   console.log("Server running");
-// });
+    try {
+        await searchtest.save();
+        res.send("inserted data");
+    }   catch (err) {
+        console.log(err);
+    }
+
+});
+
+
+app.get("/read", async (req, res) => {
+    TestModel.find({}, (err, result) => {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result)
+    });
+});
+
+
+
+app.listen(3001, () =>{
+    console.log("Server listening on port 3001...");
+});
+
