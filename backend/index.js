@@ -45,13 +45,6 @@ app.get("/read", async (req, res) => {
 });
 
 
-app.delete("/delete:id", async (req, res) => {
-    const id = req.params.id;
-
-    await TestModel.findByIdAndRemove(id).exec();
-    res.send("deleted data");
-});
-
 
 app.listen(3001, () =>{
     console.log("Server listening on port 3001...");

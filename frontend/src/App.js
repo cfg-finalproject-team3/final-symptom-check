@@ -4,23 +4,16 @@ import Test from "./components/About/Test";
 import "./App.css";
 import "./components/About/Test.css";
 import Box from "@mui/material/Box";
-import { Grid, Container, Button, Paper } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import Stack from "@mui/material/Stack";
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 
-
 import paperStyle from "./AppStyles";
 
 function App() {
-
-
-
-
-
-    
   const classes = paperStyle();
 
   //All symptoms available
@@ -41,21 +34,21 @@ function App() {
   //Age
   const [age, setAge] = useState(0);
 
-   //fetch all symptoms
-   const getSymptoms = () => {
+  //fetch all symptoms
+  const getSymptoms = () => {
     axios({
-        url: "https://api.infermedica.com/v3/concepts?types=symptom",
-        method: "get",
-        headers: {
-            "App-Id": "d6eb2a75",
-            "App-Key": "1d7353f44febd8d14d9626f9219ee475",
-            "Content-Type": "application/json",
-        },
+      url: "https://api.infermedica.com/v3/concepts?types=symptom",
+      method: "get",
+      headers: {
+        "App-Id": "d6eb2a75",
+        "App-Key": "1d7353f44febd8d14d9626f9219ee475",
+        "Content-Type": "application/json",
+      },
     }).then((res) => {
-        console.log(res.data);
-        setSymptoms(res.data);
+      console.log(res.data);
+      setSymptoms(res.data);
     });
-};
+  };
   //Fetch results of diagnosis depending on the three symptoms, age, and gender
   const getDiagnosis = () => {
     axios({
@@ -89,10 +82,7 @@ function App() {
       },
     }).then((res) => {
       console.log(res.data);
-      localStorage.setItem(
-          "conditions",
-          JSON.stringify(res.data.conditions)
-      );
+      localStorage.setItem("conditions", JSON.stringify(res.data.conditions));
       const allResults = JSON.parse(localStorage.getItem("conditions"));
       if (allResults === null) allResults = [];
       allResults.push(res.data.conditions);
@@ -227,7 +217,6 @@ function App() {
                   {/* If Api works delete Stack */}
 
                   <Stack direction="row" spacing={2}>
-
                     {/* <li className="tag">
                       <span className="tag-title">Runny Nose</span>
                     </li>
@@ -240,118 +229,112 @@ function App() {
                     <li className="tag">
                       <span className="tag-title">Hedache</span>
                     </li> */}
-{patientSymptoms.map((item) => {
-                    return <li className="tag" key={item.id}>{item.name}</li>;
-                  })}
+                    {patientSymptoms.map((item) => {
+                      return (
+                        <li className="tag" key={item.id}>
+                          {item.name}
+                        </li>
+                      );
+                    })}
                   </Stack>
-
-                
                 </ul>
               </div>
             </div>
 
-
-
             <div className="personalinfo-center">
-
-            <div className="personalinfo">
-              {" "}
-              <Typography
-                alignContent="center"
-                variant="h3"
-                fontFamily="Montserrat"
-                fontWeight={800}
-                fontSize={20}
-              >
-                Personal Information
-              </Typography>
-            </div>
-            <div className="genderbox">
-              <div className="gendertitle">
-                <span>Gender</span>
+              <div className="personalinfo">
+                {" "}
+                <Typography
+                  alignContent="center"
+                  variant="h3"
+                  fontFamily="Montserrat"
+                  fontWeight={800}
+                  fontSize={20}
+                >
+                  Personal Information
+                </Typography>
               </div>
+              <div className="genderbox">
+                <div className="gendertitle">
+                  <span>Gender</span>
+                </div>
 
-              <input
-                className="gendertitle"
-                type="radio"
-                value="male"
-                name="gender"
-                onClick={(e) => setGender(e.target.value)}
-              />
-              <span className="gendertitle">Male</span>
-              <input
-                type="radio"
-                value="female"
-                name="gender"
-                onClick={(e) => setGender(e.target.value)}
-              />
-              <span className="gendertitle">Female</span>
+                <input
+                  className="gendertitle"
+                  type="radio"
+                  value="male"
+                  name="gender"
+                  onClick={(e) => setGender(e.target.value)}
+                />
+                <span className="gendertitle">Male</span>
+                <input
+                  type="radio"
+                  value="female"
+                  name="gender"
+                  onClick={(e) => setGender(e.target.value)}
+                />
+                <span className="gendertitle">Female</span>
 
-              <span className="agetitle">Age</span>
-              <input
-                className="age"
-                type="number"
-                value={age === 0 ? "" : age}
-                onChange={(e) => {
-                  setAge(e.target.value);
-                }}
-              />
+                <span className="agetitle">Age</span>
+                <input
+                  className="age"
+                  type="number"
+                  value={age === 0 ? "" : age}
+                  onChange={(e) => {
+                    setAge(e.target.value);
+                  }}
+                />
+              </div>
             </div>
-            </div>
-
 
             <Grid>
               <Test />
             </Grid>
 
             <div className="btncontainer">
-              <Button  
-              variant="contained"
+              <Button
+                variant="contained"
                 color="primary"
                 className={classes.btnStyle}
                 marginTop="none"
-                // className="diagnosebtn" 
-                onClick={getDiagnosis}>
+                // className="diagnosebtn"
+                onClick={getDiagnosis}
+              >
                 Diagnose
               </Button>
             </div>
 
-        
             <div className="diagnoseresults-body">
-            <div className="diagnoseresults-container">
-              <Typography
-                margin={3}
-                marginTop={10}
-                marginBottom={5}
-                alignContent="center"
-                justifyContent="center"
-                variant="h4"
-                fontFamily="Montserrat"
-                fontWeight={500}
-              >
-                Take a look at our suggestions...
-              </Typography>
-            </div>
-            <div className="results-container">
-
-              <ul className="diagnoseresults">
-
               <div className="diagnoseresults-container">
-                </div>
+                <Typography
+                  margin={3}
+                  marginTop={10}
+                  marginBottom={5}
+                  alignContent="center"
+                  justifyContent="center"
+                  variant="h4"
+                  fontFamily="Montserrat"
+                  fontWeight={500}
+                >
+                  Take a look at our suggestions...
+                </Typography>
+              </div>
+              <div className="results-container">
+                <ul className="diagnoseresults">
+                  <div className="diagnoseresults-container"></div>
 
-                {conditions.map((condition) => {
-                  return (
-                    <>
-                  <li className="diagnoseresults-list" key={condition.id}>{condition.name}</li>
-                  
-                </>
-                  )
-                  
-                })}
-              </ul>
+                  {conditions.map((condition) => {
+                    return (
+                      <>
+                        <li className="diagnoseresults-list" key={condition.id}>
+                          {condition.name}
+                        </li>
+                      </>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
-
 
             {/* </Grid> */}
           </div>

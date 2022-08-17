@@ -1,179 +1,163 @@
-
 .test-title {
-    color: #fff;
-    text-align: center;
-    padding-top: 3em;
-    margin-left: 1em;   
+  color: #fff;
+  text-align: center;
+  padding-top: 3em;
+  margin-left: 1em;
 }
 
 .test-input-2 {
-    background-color: #F5F5F5;
-    border:1px solid #E3E3E3; 
-    border-radius: 1em;
-    box-sizing: border-box;
-    color: #000;
-    font-size: 1em;
-    line-height: normal;
-    outline: none;
-    position: relative;
-    height: 3em;
-    width: 20em;
-    margin-left: 1em;
-    margin-top: 0.1em;
-    padding: 1%;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 1em;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: 3em;
+  width: 20em;
+  margin-left: 1em;
+  margin-top: 0.1em;
+  padding: 1%;
 }
 
 .test-title1 {
-    color: #000;
-    text-align: center;
-    padding-top: 50px;
+  color: #000;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .test-title3 {
-    color: #fff;
-    text-align: center;
-    padding-top: 70px;
-    margin-top: 2em;
+  color: #fff;
+  text-align: center;
+  padding-top: 70px;
+  margin-top: 2em;
 }
-
 
 .test-title2 {
-    color: #000;
-    text-align: center;
-    padding-top: 50px;
+  color: #000;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .addlistbtn {
-    
-    background-color: rgb(193, 231, 173);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    padding: 0px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    font-style: bold;
-    line-height: 40px;
-    cursor: pointer;
-    font-weight: bolder;
-    margin-top: 0.5em;
-    
-
+  background-color: rgb(193, 231, 173);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  font-style: bold;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-top: 0.5em;
 }
 
 .addlistbtn {
-    transition-duration: 0.4s;
-  }
-  
+  transition-duration: 0.4s;
+}
+
 .addlistbtn:hover {
-    background-color: #44cc6a;
-    color: white;
-  }
+  background-color: #44cc6a;
+  color: white;
+}
 
-  .test-container {
-    text-align: start;
-    background-color: #2B6DDF;
-    border:0px solid #ffff; 
-    border-bottom: 0px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    box-sizing: border-box;
-    color: #fff;
-    outline: none;
-    position: relative;
-    height: 4em;
-    /* width: 50em; */
-    margin-top: 5em;
-    padding-left: 3em;
-    padding-top: -1em; 
-    box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+.test-container {
+  text-align: start;
+  background-color: #2b6ddf;
+  border: 0px solid #ffff;
+  border-bottom: 0px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 4em;
+  /* width: 50em; */
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: -1em;
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
     0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
 }
 
-
-  .testbox {
-      text-align: start;
-      background-color: #ffff;
-      border:0px solid #ffff; 
-      box-sizing: border-box;
-      color: #000;
-      font-size: 1em;
-      line-height: normal;
-      outline: none;
-      position: relative;
-      height: auto;
-      /* max-width: 50em; */
-      border-bottom-left-radius: 25px;
-      border-bottom-right-radius: 25px;
-      padding-top: 1.5em;
-      padding-bottom: 1.5em;
-      box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
+.testbox {
+  text-align: start;
+  background-color: #ffff;
+  border: 0px solid #ffff;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: auto;
+  /* max-width: 50em; */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
     0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
 }
-      
 
+.test-results-list {
+  list-style: none;
+  display: inline-block;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 1em;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1em;
+  line-height: normal;
+  outline: none;
+  position: relative;
+  height: 3em;
+  width: 20em;
+  margin-left: 1em;
+  margin-top: 0.2em;
+  padding: 1%;
+}
 
-  .test-results-list {
-    list-style: none;
-    display: inline-block;
-    background-color: #F5F5F5;
-    border:1px solid #E3E3E3; 
-    border-radius: 1em;
-    box-sizing: border-box;
-    color: #000;
-    font-size: 1em;
-    line-height: normal;
-    outline: none;
-    position: relative;
-    height: 3em;
-    width: 20em;
-    margin-left: 1em;
-    margin-top: 0.2em;
-    padding: 1%;
+.personalinfo1 {
+  background-color: #2b6ddf;
+  border: 0px solid #ffff;
+  border-bottom: 0px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-sizing: border-box;
+  color: #fff;
+  outline: none;
+  position: relative;
+  height: 4em;
+  /* max-width: 50em; */
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+}
 
+.clearfix {
+  margin-top: 2em;
+}
 
-  }
+.clearfix1 {
+  display: inline-block;
+  padding-left: 1.5em;
+}
 
-
-  .personalinfo1 {
- 
-    background-color: #2B6DDF;
-    border:0px solid #ffff; 
-    border-bottom: 0px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    box-sizing: border-box;
-    color: #fff;
-    outline: none;
-    position: relative;
-    height: 4em;
-    /* max-width: 50em; */
-    margin-top: 5em;
-    padding-left: 3em;
-   padding-top: 1em;
-  }
-
-
-  .clearfix {
-
-    margin-top: 2em;
-  }
-
-
-  .clearfix1 {
-
-    display: inline-block;
-    padding-left: 1.5em;
-  }
-
-  .center-test-results {
-    display: block;
+.center-test-results {
+  display: block;
   align-items: center;
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
-  }
+}
